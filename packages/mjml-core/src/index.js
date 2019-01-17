@@ -2,7 +2,7 @@ import { find, get, identity, map, omit, reduce, isObject } from 'lodash'
 import path from 'path'
 import juice from 'juice'
 import { html as htmlBeautify } from 'js-beautify'
-import { minify as htmlMinify } from 'html-minifier'
+// import { minify as htmlMinify } from 'html-minifier'
 
 import MJMLParser from 'mjml-parser-xml'
 import MJMLValidator from 'mjml-validator'
@@ -278,6 +278,7 @@ export default function mjml2html(mjml, options = {}) {
         })
       : content
 
+  /*
   if (minify && minify !== 'false') {
     content = htmlMinify(content, {
       collapseWhitespace: true,
@@ -286,6 +287,7 @@ export default function mjml2html(mjml, options = {}) {
       ...minifyOptions,
     })
   }
+  */
 
   content = mergeOutlookConditionnals(content)
 
@@ -295,7 +297,7 @@ export default function mjml2html(mjml, options = {}) {
   }
 }
 
-handleMjmlConfig(process.cwd(), registerComponent)
+// handleMjmlConfig(process.cwd(), registerComponent)
 
 export { components, initComponent, registerComponent, suffixCssClasses, handleMjmlConfig, initializeType }
 

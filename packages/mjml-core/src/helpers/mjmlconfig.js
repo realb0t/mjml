@@ -7,7 +7,7 @@ import { registerComponent } from '../components'
 export function readMjmlConfig(configPathOrDir = process.cwd()) {
   let componentRootPath = process.cwd()
   let mjmlConfigPath = configPathOrDir
-  try {
+  /*try {
     mjmlConfigPath = path.basename(configPathOrDir) === '.mjmlconfig'
       ? path.resolve(configPathOrDir)
       : path.resolve(configPathOrDir, '.mjmlconfig')
@@ -19,7 +19,9 @@ export function readMjmlConfig(configPathOrDir = process.cwd()) {
       console.error('Error reading mjmlconfig : ', e) // eslint-disable-line no-console
     }
     return { mjmlConfig: { packages: [] }, mjmlConfigPath, componentRootPath, error: e }
-  }
+  }*/
+
+  return { mjmlConfig: { packages: [] }, mjmlConfigPath, componentRootPath, error: null }
 }
 
 

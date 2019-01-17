@@ -3,11 +3,14 @@ import kebabCase from 'lodash/kebabCase'
 const components = {}
 
 export function registerComponent(Component) {
+  console.log('register component', Component.name);
   components[kebabCase(Component.name)] = Component
 }
 
 export function initComponent({ initialDatas, name }) {
+
   const Component = components[name]
+  console.log('Component', Component, components, name);
 
   if (Component) {
     const component = new Component(initialDatas)
